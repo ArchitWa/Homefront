@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', 'Pacifico', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.shadow {
+  box-shadow:
+    -2px -2px 3px 0 rgba(255, 255, 255, .2),
+    2px 2px 3px 0 rgba(0, 0, 0, .2);
+}
+
+
+@keyframes my-pulse {
+  from {
+    scale: 1;
+    filter: sepia(100%) brightness(70%);
+  }
+
+  to {
+    scale: 1;
+    filter: none;
+  }
+
+  50% {
+    scale: 1.08;
+  }
+}
+
+
+.card {
+  background-color: white;
+  border-radius: 1.5rem;
+  width: 25rem;
+  height: 20rem;
+  aspect-ratio: 5/4;
+  overflow: hidden;
+}
+
+.card>img {
+  background-color: white;
+  /* height: 60%; */
+  width: 100%;
+  aspect-ratio: 5/4;
+  object-fit: cover;
+  filter: sepia(100%) saturate(80%) brightness(70%) hue-rotate(180deg);
+}
+
+.card:hover>img {
+  animation: 1500ms my-pulse ease-in-out forwards;
+}
+
+@keyframes my-slide {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 100px 0;
+  }
+}
+
+.header {
+  background-color: white;
+  height: 20rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+.header>img {
+  background-color: white;
+  height: 20rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+.header:hover > img {
+  animation:  2s my-slide linear infinite;
+}
+
+
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  margin-bottom: 2rem;
+}
+
+.search-box {
+  background: white;
+  height: 50px;
+  border-radius: 20px;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.8s;
+  margin-top: 5rem;
+}
+
+.search-box:hover>.search-input {
+  /* color: #9DE88C; */
+  width: 300px;
+}
+
+.search-box .search-input {
+  background: transparent;
+  /* color: #9DE88C; */
+  border: none;
+  outline: none;
+  width: 0px;
+  font-weight: 500;
+  font-size: 16px;
+  transition: 0.8s;
+}
+
+
+.search-box .search-btn .fa-magnifying-glass {
+  /* color: #9DE88C; */
+}
+
+.search-box>button {
+  border: none;
+  background-color: transparent;
+}
+
+.search-input {
+  caret-color: transparent;
+}
+
+.shadow-full {
+  box-shadow: inset 2px 2px 3px 0 rgba(255, 255, 255, .3),
+    inset -2px -2px 3px 0 rgba(116, 125, 136, .2),
+    -2px -2px 3px 0 rgba(255, 255, 255, .2),
+    2px 2px 3px 0 rgba(0, 0, 0, .2);
+}
